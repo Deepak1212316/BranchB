@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="adminLayout" template="/WEB-INF/layout/adminLayout.jsp">      
+      <put-attribute name="title"  value="Buy Online Organic Foods And Products"/> 
+      <put-attribute name="top"   value="/WEB-INF/layout/top.jsp"/>          
+      <put-attribute name="body"   value="/WEB-INF/layout/body.jsp"/>
+      
+      
+   </definition>
+
+ <definition name="staticLayout" template="/WEB-INF/layout/staticLayout.jsp">      
+       <put-attribute name="title"  value="Buy Online Organic Foods And Products"/> 
+      <put-attribute name="meta name=" value="Online Organic Store of organic products and Natural products. Branded organic products and buy certified organic products online for best deals and shopping offer." />
+      <put-attribute name="top"   value="/WEB-INF/layout/top.jsp"/>          
+      <put-attribute name="body"   value="/WEB-INF/layout/body.jsp"/>
+      
+   </definition>
+
+  <definition name="userLayout" template="/WEB-INF/layout/userLayout.jsp">      
+      <put-attribute name="title"  value="Buy Online Organic Foods And Products"/> 
+      <put-attribute name="meta name=" value="Online Organic Store of organic products and Natural products. Branded organic products and buy certified organic products online for best deals and shopping offer." />
+      <put-attribute name="top"   value="/WEB-INF/layout/top.jsp"/>          
+      <put-attribute name="body"   value="/WEB-INF/layout/body.jsp"/>
+  	</definition>
+  	
+  	<definition name="welcomeLayout" template="/WEB-INF/layout/welcomeLayout.jsp">      
+      <put-attribute name="title"  value="Buy Online Organic Foods And Products"/> 
+      <put-attribute name="meta name=" value="Online Organic Store of organic products and Natural products. Branded organic products and buy certified organic products online for best deals and shopping offer." />
+      <put-attribute name="top"   value="/WEB-INF/layout/top.jsp"/>          
+      <put-attribute name="body"   value="/WEB-INF/layout/body.jsp"/>
+  	</definition>
+  
+  
+  <definition name="home" extends="welcomeLayout">
+   <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Buy Online Organic Foods And Products"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/home.jsp"/>
+     
+            
+  </definition>
+  
+  <definition name="adminLogin" extends="welcomeLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Secure Admin Login Panel"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/adminLogin.jsp"/>      
+     
+  </definition>
+  
+  <definition name="adminHome" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="Admin Home"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/adminHome.jsp"/>      
+     
+  </definition>
+  
+  <definition name="category" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="AdminHome"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/category.jsp"/>      
+     
+  </definition>
+    <definition name="sendnewsletter" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="AdminHome"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/sendnewsletter.jsp"/>      
+     
+  </definition>
+  <definition name="addProduct" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="AdminHome"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/addProduct.jsp"/>      
+     
+  </definition>
+  <definition name="Viewsubscriber" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="AdminHome"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/Viewsubscriber.jsp"/>      
+     
+  </definition>
+  
+  <definition name="ViewProducttable" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="AdminHome"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/ViewProducttable.jsp"/>      
+     
+  </definition>
+  
+  <definition name="viewCategory" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="AdminHome"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/viewCategory.jsp"/>      
+     
+  </definition>
+  
+   <definition name="login" extends="staticLayout">
+   <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Customer Login|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/login.jsp"/>      
+     
+  </definition>
+  
+  <definition name="checkOut" extends="userLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/topHeader.jsp"/>
+      <put-attribute name="title"  value="CheckOut|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/checkOut.jsp"/>      
+     
+  </definition>
+   <definition name="updateProfile" extends="userLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/topHeader.jsp"/>
+      <put-attribute name="title"  value="Update Profile|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/updateProfile.jsp"/>      
+     
+  </definition>
+  <definition name="UserRegistration" extends="staticLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="User Registration|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/UserRegistration.jsp"/>      
+     
+  </definition>
+  
+  <definition name="shoppingsucess" extends="userLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/topHeader.jsp"/>
+      <put-attribute name="title"  value="ShoppingDone|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/shoppingsucess.jsp"/>      
+     
+  </definition>
+<definition name="SendSuccess" extends="welcomeLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="SendSuccess|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/SendSuccess.jsp"/>      
+     
+  </definition>
+<definition name="viewdetail" extends="userLayout">
+<put-attribute name="top"   value="/WEB-INF/views/topHeader.jsp"/>
+      <put-attribute name="title"  value="Details of product|Ipuroorganic.com "/>       
+      <put-attribute name="body"   value="/WEB-INF/views/viewdetail.jsp"/>      
+     
+  </definition>
+  
+  <definition name="viewOrder" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="view customer order"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/viewOrder.jsp"/>       
+     
+  </definition>
+  
+  <definition name="check" extends="welcomeLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/topHeader.jsp"/>
+      <put-attribute name="title"  value="View product by category|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/check.jsp"/>       
+     
+  </definition>
+  <definition name="FAQ" extends="staticLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+     <put-attribute name="meta name=" value="Frequently asked questions on the Ipurooranic.com, online store for certified organic and natural products." />
+ <put-attribute name="body"   value="/WEB-INF/views/FAQ.jsp"/>
+     
+  </definition>
+
+ <definition name="shippinginformation" extends="staticLayout">      
+ <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Shipping Information|Ipuroorganic.com"/>
+       <put-attribute name="meta name=" value="Shipping details for the product purchased on Organic Shop. Free shipping when you buy Rs 500 of organic and eco-friendly products from Organic Shop." />
+            
+       <put-attribute name="body"   value="/WEB-INF/views/shippinginformation.jsp"/>
+     
+   </definition>
+    <definition name="aboutus" extends="staticLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+  <put-attribute name="meta name=" value="Details on team, goal, motivation of first Online Organic store. Offer certified and branded organic store in India." />
+      
+      <put-attribute name="title"  value="About Us|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/aboutus.jsp"/>      
+     
+  </definition>
+   <definition name="ContactUs" extends="staticLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Contact Us|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/ContactUs.jsp"/>      
+     
+  </definition>  
+ 
+   <definition name="Viewqueries" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="view customer order"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/Viewqueries.jsp"/>      
+     
+  </definition>
+  
+  
+  <definition name="Sendmessage" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+      <put-attribute name="title"  value="view customer order"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/Sendmessage.jsp"/>      
+     
+  </definition>
+  
+ <!--  <definition name="Sendmessag" extends="adminLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/adminTopHeader.jsp"/>
+           
+      <put-attribute name="body"   value="/WEB-INF/views/Sendmessage.jsp"/>      
+     
+  </definition>  -->
+ <definition name="WhyOrganic" extends="staticLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Why Organic|Ipuroorganic.com"/>     
+     <put-attribute name="meta name=" value="List reason to why you buy organic products. Details on advantages and benefits of organic food, textile and cosmetics." />
+      <put-attribute name="body"   value="/WEB-INF/views/WhyOrganic.jsp"/>      
+     
+  </definition>  
+ <definition name="PrivacyPolicy" extends="staticLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Privacy Policy|Ipuroorganic.com"/>     
+        <put-attribute name="body"   value="/WEB-INF/views/PrivacyPolicy.jsp"/>      
+     
+  </definition>
+  <definition name="TermsAndConditions" extends="staticLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/homeTopHeader.jsp"/>
+      <put-attribute name="title"  value="Terms of Conditions|Ipuroorganic.com"/>      
+     <put-attribute name="meta name=" value="Terms and Conditions of IpuroOrganic. Please read policy." />
+      <put-attribute name="body"   value="/WEB-INF/views/TermsAndConditions.jsp"/>      
+     
+  </definition>
+  <definition name="shippingAddress" extends="userLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/topHeader.jsp"/>
+      <put-attribute name="title"  value="Shipping Address|Ipuroorganic.com"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/shippingAddress.jsp"/>      
+     
+  </definition> 
+  
+   <definition name="changshippingAddress" extends="userLayout">
+  <put-attribute name="top"   value="/WEB-INF/views/topHeader.jsp"/>
+      <put-attribute name="title"  value="contactus"/>       
+      <put-attribute name="body"   value="/WEB-INF/views/changshippingAddress.jsp"/>      
+     
+  </definition> 
+ 
+  
+  
+</tiles-definitions>

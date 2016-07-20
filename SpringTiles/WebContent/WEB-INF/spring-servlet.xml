@@ -1,0 +1,121 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+ 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx 
+  		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+  		http://www.springframework.org/schema/mvc 
+  		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<context:component-scan	base-package="com.ipuro.controller" />
+		
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    	<property name="order" value="0"></property>
+    	<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+	</bean>
+    
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+    	<property name="definitions">
+    		<list>
+    		    <value>/WEB-INF/jsptiles.xml</value>
+    			
+    		</list>
+    	</property>
+	</bean>
+	
+	
+	<bean id="userdao" class="com.ipuro.dao.UserDao"></bean>
+	<bean id="adminuserdao" class="com.ipuro.dao.AdminUserDao"></bean>	
+	<bean id="orderdao" class="com.ipuro.dao.OrderDao"></bean>
+	<bean id="productdao" class="com.ipuro.dao.ProductDao"></bean>	
+	<bean id="categorydao" class="com.ipuro.dao.CategoryDao"></bean>
+	<bean id="shoppingcartdao" class="com.ipuro.dao.ShoppingCartDao"></bean>
+		<bean id="contactdao" class="com.ipuro.dao.ContactDao"></bean>
+	<bean id="newsletterdao" class="com.ipuro.dao.NewsletterDao"></bean>
+	
+	
+	
+	<bean id="orderservice" class="com.ipuro.service.OrderService"></bean>
+	<bean id="userservice" class="com.ipuro.service.UserService"></bean>	
+	<bean id="adminservice" class="com.ipuro.service.AdminUserService"></bean>
+	<bean id="productservice" class="com.ipuro.service.ProductService"></bean>
+	<bean id="categoryservice" class="com.ipuro.service.CategoryService"></bean>	
+	<bean id="shoppingcartservice" class="com.ipuro.service.ShoppingCartService"></bean>
+		<bean id="contactservice" class="com.ipuro.service.ContactService"></bean>	
+	<bean id="newsletterservice" class="com.ipuro.service.NewsletterService"></bean>
+	
+	
+	<tx:annotation-driven />
+ 	<bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+ 
+
+ 	<!-- data source for our database -->
+ 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+  		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+  		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/org_food_port" />
+  		<property name="user" value="root" />
+  		<property name="password" value="password" />
+  		<property name="maxPoolSize" value="10" />
+  		<property name="maxStatements" value="0" />
+  		<property name="minPoolSize" value="5" />
+ 	</bean>
+  			  	    	
+        <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/> 
+		
+ 	<!-- configure hibernate session factory -->
+ 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+  		<property name="dataSource" ref="dataSource" />
+  		<property name="annotatedClasses">
+   		<list>
+			<value>com.ipuro.model.User</value>
+			<value>com.ipuro.model.AdminUser</value>
+			<value>com.ipuro.model.Category</value>			
+			<value>com.ipuro.model.Order</value>			
+			<value>com.ipuro.model.Product</value>			
+			<value>com.ipuro.model.ShoppingCart</value>
+			<value>com.ipuro.model.Contactform</value>
+			<value>com.ipuro.model.Newsletter</value>
+			
+			</list>
+  		</property>
+  		<property name="hibernateProperties">
+   			<props>
+    			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+    			<prop key="hibernate.show_sql">true</prop>
+    			<prop key="hibernate.hbm2ddl.auto">update</prop>
+   			</props>
+  		</property>
+ 	</bean>
+<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="mail.ipurororganic.com" />
+        <property name="port" value="25" />
+        <property name="username" value="support@ipuroorganic.com" />
+        <property name="password" value="oK3@z025yC!g" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+	
+	
+</beans>
